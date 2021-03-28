@@ -7,6 +7,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
+<!--        <data>-->
+<!--            <variable-->
+<!--                name="shoeViewModel"-->
+<!--                type="com.example.shoestoreinventory.screens.shoe.shoeDetail.ShoeDetailFragment"/>-->
+<!--        </data>-->
+
         <TextView
             android:id="@+id/add_product_text"
             style="@style/TitleStyle"

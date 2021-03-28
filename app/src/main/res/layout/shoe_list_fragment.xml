@@ -4,21 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
+        android:id="@+id/relative_layout_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <ListView
-            android:id="@+id/list_view"
+        <LinearLayout
+            android:id="@+id/shoes_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
-            app:layout_constraintBottom_toTopOf="@id/floatingActionButton"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="1.0"
+            android:orientation="vertical"
             tools:listitem="@layout/shoe_item" />
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton

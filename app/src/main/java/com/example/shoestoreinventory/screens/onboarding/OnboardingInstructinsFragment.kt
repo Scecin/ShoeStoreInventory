@@ -10,7 +10,7 @@ import androidx.navigation.Navigation
 import com.example.shoestoreinventory.R
 import com.example.shoestoreinventory.databinding.OnboardingFirstFragmentBinding
 
-class OnboardingFirstFragment : Fragment(){
+class OnboardingInstructinsFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
