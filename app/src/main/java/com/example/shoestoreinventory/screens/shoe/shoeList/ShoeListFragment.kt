@@ -24,7 +24,7 @@ class ShoeListFragment: Fragment(){
         )
 
         // Add viewModel
-        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
 
         // Add new view
 //        val linearLayout: LinearLayout = binding.shoesLinearLayout
@@ -38,7 +38,12 @@ class ShoeListFragment: Fragment(){
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment)
         )
 
-        // Use the custom layout
+//        // Add observer
+//        viewModel.shoeList.observe(viewLifecycleOwner, Observer { newItem ->
+//            binding.shoesLinearLayout.addView(newItem, R.layout.shoe_list_fragment)
+//        })
+
+        // Use the custom class
         viewModel.shoeList.forEach { shoe ->
             val shoeView = ShoeView(requireContext())
             shoeView.setShoeItemView(shoe)

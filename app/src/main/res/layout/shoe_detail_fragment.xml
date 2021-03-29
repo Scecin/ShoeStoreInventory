@@ -3,15 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="shoeViewModel"
+            type="com.example.shoestoreinventory.screens.shoe.ShoeViewModel" />
+    </data>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-
-<!--        <data>-->
-<!--            <variable-->
-<!--                name="shoeViewModel"-->
-<!--                type="com.example.shoestoreinventory.screens.shoe.shoeDetail.ShoeDetailFragment"/>-->
-<!--        </data>-->
 
         <TextView
             android:id="@+id/add_product_text"
@@ -35,6 +36,7 @@
             android:layout_marginEnd="8dp"
             android:ems="10"
             android:hint="@string/name_text"
+            android:text="@{shoeViewModel.name}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -50,6 +52,7 @@
             android:layout_marginEnd="8dp"
             android:ems="10"
             android:hint="@string/brand_text"
+            android:text="@{shoeViewModel.brand}"
             android:inputType="textPersonName"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -74,6 +77,7 @@
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            android:text="@{shoeViewModel.gender}"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
@@ -88,6 +92,7 @@
             android:layout_marginEnd="8dp"
             android:ems="10"
             android:hint="@string/size_text"
+            android:text="@{shoeViewModel.size}"
             android:inputType="numberDecimal"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -103,6 +108,7 @@
             android:ems="10"
             android:gravity="start|top"
             android:hint="@string/description_text"
+            android:text="@{shoeViewModel.description}"
             android:inputType="textMultiLine"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -121,12 +127,12 @@
 
         <Button
             android:id="@+id/add_shoe_button"
+            style="@style/CustomButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
             android:text="@string/add"
-            style="@style/CustomButton"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
