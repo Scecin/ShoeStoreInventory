@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.example.shoestoreinventory.R
 import com.example.shoestoreinventory.screens.shoe.shoeList.Shoe
 
-class ShoeViewModel(newShoe: MutableList<Shoe>) : ViewModel() {
+class ShoeViewModel : ViewModel() {
     // Name
     private var _name = MutableLiveData<String>()
     val name: LiveData<String>
@@ -38,9 +38,6 @@ class ShoeViewModel(newShoe: MutableList<Shoe>) : ViewModel() {
 //    private val _addNewItem = MutableLiveData<Boolean>()
 //    val addNewItem: LiveData<Boolean>
 //    get() = _addNewItem
-
-
-    //TODO create shoeList variable (val shoeList: MutableList<Shoe> = mutableListOf())
 
     init {
         createList()

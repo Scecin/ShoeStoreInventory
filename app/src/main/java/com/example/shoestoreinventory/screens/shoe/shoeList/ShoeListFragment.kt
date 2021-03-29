@@ -24,7 +24,7 @@ class ShoeListFragment: Fragment(){
         )
 
         // Add viewModel
-        viewModel = ViewModelProvider(requireActivity()).get(ShoeViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
 
         // Add new view
 //        val linearLayout: LinearLayout = binding.shoesLinearLayout
