@@ -13,14 +13,14 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.shoestoreinventory.R
-import com.example.shoestoreinventory.databinding.ShoeDetailFragmentBinding
+import com.example.shoestoreinventory.databinding.FragmentShoeDetailBinding
 import com.example.shoestoreinventory.screens.shoe.ShoeViewModel
 
 
 class ShoeDetailFragment : Fragment() {
 
     private lateinit var viewModel: ShoeViewModel
-    private lateinit var binding: ShoeDetailFragmentBinding
+    private lateinit var binding: FragmentShoeDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,7 +28,7 @@ class ShoeDetailFragment : Fragment() {
     ): View? {
 
         binding = DataBindingUtil.inflate(
-            inflater, R.layout.shoe_detail_fragment, container, false
+            inflater, R.layout.fragment_shoe_detail, container, false
         )
 
         // Add viewModel
@@ -54,7 +54,6 @@ class ShoeDetailFragment : Fragment() {
         // Add onclickListeners
         binding.addShoeButton.setOnClickListener { v: View ->
             Toast.makeText(activity, "The new item has been created", Toast.LENGTH_SHORT).show()
-            addNewItem()
             v.findNavController()
                 .navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
         }
@@ -64,20 +63,5 @@ class ShoeDetailFragment : Fragment() {
         )
 
         return binding.root
-    }
-
-    private fun addNewItem() {
-        viewModel.saveShoe(
-            binding.addNameText.text.toString(),
-            binding.addBrandText.text.toString(),
-            binding.addGenderSpinner.selectedItem.toString(),
-            binding.addSizeText.text.toString(),
-            binding.addDescriptionText.text.toString()
-        )
-////        viewModel.addShoe(newShoe)
-////        //TODO viewModel.addShoe(newShoe) to list
-//    }
-
-
     }
 }

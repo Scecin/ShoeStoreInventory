@@ -29,7 +29,7 @@
     </fragment>
     <fragment
         android:id="@+id/onboardingFirstFragment"
-        android:name="com.example.shoestoreinventory.screens.onboarding.OnboardingInstructinsFragment"
+        android:name="com.example.shoestoreinventory.screens.onboarding.OnboardingInstructionsFragment"
         android:label="OnboardingFirstFragment" >
         <action
             android:id="@+id/action_onboardingFirstFragment_to_onboardingSecondFragment"

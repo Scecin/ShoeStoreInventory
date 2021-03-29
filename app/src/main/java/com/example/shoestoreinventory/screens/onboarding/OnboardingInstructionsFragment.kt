@@ -8,16 +8,16 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.shoestoreinventory.R
-import com.example.shoestoreinventory.databinding.OnboardingFirstFragmentBinding
+import com.example.shoestoreinventory.databinding.FragmentFirstOnboardingBinding
 
-class OnboardingInstructinsFragment : Fragment(){
+class OnboardingInstructionsFragment : Fragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val binding: OnboardingFirstFragmentBinding= DataBindingUtil.inflate(
-            inflater, R.layout.onboarding_first_fragment, container, false)
+        val binding: FragmentFirstOnboardingBinding= DataBindingUtil.inflate(
+            inflater, R.layout.fragment_first_onboarding, container, false)
 
         // Create onclickListeners
         binding.backButton.setOnClickListener(

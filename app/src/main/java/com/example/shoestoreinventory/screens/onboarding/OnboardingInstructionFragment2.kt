@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.shoestoreinventory.R
-import com.example.shoestoreinventory.databinding.OnboardingSecondFragmentBinding
+import com.example.shoestoreinventory.databinding.FragmentSecondOnboardingBinding
 
 class OnboardingInstructionFragment2 : Fragment() {
 
@@ -16,8 +16,8 @@ class OnboardingInstructionFragment2 : Fragment() {
         savedInstanceState: Bundle?): View? {
 
         // Inflate the layout for this fragment
-        val binding: OnboardingSecondFragmentBinding = DataBindingUtil.inflate(
-            inflater, R.layout.onboarding_second_fragment, container, false
+        val binding: FragmentSecondOnboardingBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_second_onboarding, container, false
         )
 
         // Create onClickListeners

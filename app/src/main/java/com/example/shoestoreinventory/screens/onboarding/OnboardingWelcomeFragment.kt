@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.shoestoreinventory.R
-import com.example.shoestoreinventory.databinding.OnboardingWelcomeFragmentBinding
+import com.example.shoestoreinventory.databinding.FragmentWelcomeOnboardingBinding
 
 class OnboardingWelcomeFragment : Fragment() {
 
@@ -18,8 +18,8 @@ class OnboardingWelcomeFragment : Fragment() {
     ): View {
 
         // Inflate the layout for this fragment
-        val binding: OnboardingWelcomeFragmentBinding = DataBindingUtil.inflate(
-            inflater, R.layout.onboarding_welcome_fragment, container, false
+        val binding: FragmentWelcomeOnboardingBinding = DataBindingUtil.inflate(
+            inflater, R.layout.fragment_welcome_onboarding, container, false
         )
 
         // Create onClickListener

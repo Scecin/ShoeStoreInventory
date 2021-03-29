@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import com.example.shoestoreinventory.R
-import com.example.shoestoreinventory.databinding.LoginFragmentBinding
+import com.example.shoestoreinventory.databinding.FragmentLoginBinding
 
 
 /**
@@ -21,8 +21,8 @@ class LoginFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate the layout for this fragment
-        val binding: LoginFragmentBinding = DataBindingUtil.inflate(
-                inflater, R.layout.login_fragment, container, false)
+        val binding: FragmentLoginBinding = DataBindingUtil.inflate(
+                inflater, R.layout.fragment_login, container, false)
 
         // Create onclickListeners
         binding.loginButton.setOnClickListener (
