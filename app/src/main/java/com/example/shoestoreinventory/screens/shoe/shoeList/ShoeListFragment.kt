@@ -16,11 +16,12 @@ import com.example.shoestoreinventory.screens.shoe.ShoeViewModel
 class ShoeListFragment: Fragment(){
 
     private lateinit var viewModel: ShoeViewModel
+    private lateinit var binding: FragmentShoeListBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View {
 
-        val binding: FragmentShoeListBinding = DataBindingUtil.inflate(
+        binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false)
 
         // Add viewModel
@@ -33,16 +34,20 @@ class ShoeListFragment: Fragment(){
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
 
         // Use the custom class
-        viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
-            shoeList.forEach { shoe ->
-                val shoeView = ShoeView(requireContext())
-                shoeView.setShoeItemView(shoe)
-                binding.shoesLinearLayout.addView(shoeView)
+        viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeListUpDated ->
+            shoeListUpDated.forEach {
+                addShoe(it)
             }
         })
 
         return binding.root
     }
+
+    private fun addShoe(shoe: Shoe) {
+
+
+    }
+
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)
         inflater.inflate(R.menu.overflow_menu, menu)
