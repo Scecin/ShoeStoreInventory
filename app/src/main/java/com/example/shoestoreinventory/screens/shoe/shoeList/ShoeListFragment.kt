@@ -4,8 +4,8 @@ import android.os.Bundle
 import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
@@ -15,7 +15,7 @@ import com.example.shoestoreinventory.screens.shoe.ShoeViewModel
 
 class ShoeListFragment: Fragment(){
 
-    private lateinit var viewModel: ShoeViewModel
+    private val shareViewModel: ShoeViewModel by activityViewModels()
     private lateinit var binding: FragmentShoeListBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -24,9 +24,6 @@ class ShoeListFragment: Fragment(){
         binding = DataBindingUtil.inflate(
             inflater, R.layout.fragment_shoe_list, container, false)
 
-        // Add viewModel
-        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
-
         // Include the menu
         setHasOptionsMenu(true)
 
@@ -34,7 +31,7 @@ class ShoeListFragment: Fragment(){
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
 
         // Use the custom class
-        viewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeListUpDated ->
+        shareViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeListUpDated ->
             shoeListUpDated.forEach {
                 addShoe(it)
             }

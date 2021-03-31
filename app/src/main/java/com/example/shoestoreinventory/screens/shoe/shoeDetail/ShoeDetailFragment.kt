@@ -9,7 +9,7 @@ import android.widget.Spinner
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import com.example.shoestoreinventory.R
@@ -19,7 +19,7 @@ import com.example.shoestoreinventory.screens.shoe.ShoeViewModel
 
 class ShoeDetailFragment : Fragment() {
 
-    private lateinit var viewModel: ShoeViewModel
+    private val shareViewModel: ShoeViewModel by activityViewModels()
     private lateinit var binding: FragmentShoeDetailBinding
 
     override fun onCreateView(
@@ -31,12 +31,9 @@ class ShoeDetailFragment : Fragment() {
             inflater, R.layout.fragment_shoe_detail, container, false
         )
 
-        // Add viewModel
-        viewModel = ViewModelProvider(this).get(ShoeViewModel::class.java)
-
         // Set the viewmodel for databinding - this allows the bound layout access to all of the
         // data in the VieWModel
-        binding.shoeViewModel = viewModel
+        binding.shoeViewModel = shareViewModel
 
         // Specify the current activity as the lifecycle owner of the binding. This is used so that
         // the binding can observe LiveData updates
