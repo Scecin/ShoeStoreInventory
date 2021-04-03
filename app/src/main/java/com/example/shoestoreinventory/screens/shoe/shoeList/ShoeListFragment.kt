@@ -12,6 +12,7 @@ import androidx.navigation.ui.NavigationUI
 import com.example.shoestoreinventory.R
 import com.example.shoestoreinventory.databinding.FragmentShoeListBinding
 import com.example.shoestoreinventory.screens.shoe.ShoeViewModel
+import kotlinx.android.synthetic.main.shoe_item.view.*
 
 class ShoeListFragment: Fragment(){
 
@@ -31,19 +32,24 @@ class ShoeListFragment: Fragment(){
             Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
 
         // Use the custom class
-        shareViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeListUpDated ->
-            shoeListUpDated.forEach {
-                addShoe(it)
+        shareViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
+            shoeList.forEach { shoe ->
+                val view: View = inflater.inflate(R.layout.shoe_item, null, false)
+                view.shoe_image.setImageResource(shoe.imageResource)
+                view.shoe_name.text = shoe.name
+                view.shoe_brand.text = shoe.brand
+                view.shoe_gender.text = shoe.gender
+                view.shoe_size.text = shoe.size
+                view.shoe_description.text = shoe.description
+
+                binding.shoesLinearLayout.addView(view)
+
             }
         })
 
         return binding.root
     }
 
-    private fun addShoe(shoe: Shoe) {
-
-
-    }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

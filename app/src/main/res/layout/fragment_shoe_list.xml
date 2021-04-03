@@ -9,15 +9,18 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
         <LinearLayout
             android:id="@+id/shoes_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="8dp"
             android:orientation="vertical"
-            tools:listitem="@layout/shoe_item">
-
-        </LinearLayout>
+            tools:listitem="@layout/shoe_item"/>
+        </ScrollView>
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/floatingActionButton"

@@ -7,43 +7,25 @@ import com.example.shoestoreinventory.R
 import com.example.shoestoreinventory.screens.shoe.shoeList.Shoe
 
 class ShoeViewModel : ViewModel() {
-    // Image
-    private var _image = MutableLiveData<Int>()
-    val image: LiveData<Int>
-    get() = _image
-
-    // Name
-    private var _name = MutableLiveData<String>()
-    val name: LiveData<String>
-        get() = _name
-
-    // Brand
-    private var _brand = MutableLiveData<String>()
-    val brand: LiveData<String>
-        get() = _brand
-
-    // Gender
-    private var _gender = MutableLiveData<String>()
-    val gender: LiveData<String>
-        get() = _gender
-
-    // Size
-    private var _size = MutableLiveData<String>()
-    val size: LiveData<String>
-        get() = _size
-
-    // Description
-    private var _description = MutableLiveData<String>()
-    val description: MutableLiveData<String>
-        get() = _description
 
     // Shoe list
     private val _shoeList = MutableLiveData (mutableListOf<Shoe>())
     val shoeList: LiveData<MutableList<Shoe>>
     get() = _shoeList
 
+    // Shoe
+    private val _shoe = MutableLiveData<Shoe>()
+    val shoe: LiveData<Shoe>
+    get() = _shoe
+
+    private val _addNewItem = MutableLiveData<Boolean>()
+    val addNewItem: LiveData<Boolean>
+        get() = _addNewItem
+
     init {
-        shoeList()
+        _shoe.value = Shoe(0,"","","","","")
+        _shoeList.value = shoeList()
+        _addNewItem.value = false
     }
 
     private fun shoeList(): MutableList<Shoe> {
@@ -65,9 +47,10 @@ class ShoeViewModel : ViewModel() {
         )
     }
 
-    fun addNewShoe(shoe: Shoe) {
-        _shoeList.value?.add(shoe)
-
+    fun addNewShoe() {
+        _shoeList.value?.add(_shoe.value!!)
+        _addNewItem.value = true
+        _shoe.value = Shoe(0,"","","","","")
     }
 
     override fun onCleared() {

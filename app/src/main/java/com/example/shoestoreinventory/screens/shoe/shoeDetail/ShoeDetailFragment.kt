@@ -10,8 +10,9 @@ import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import com.example.shoestoreinventory.R
 import com.example.shoestoreinventory.databinding.FragmentShoeDetailBinding
 import com.example.shoestoreinventory.screens.shoe.ShoeViewModel
@@ -33,7 +34,7 @@ class ShoeDetailFragment : Fragment() {
 
         // Set the viewmodel for databinding - this allows the bound layout access to all of the
         // data in the VieWModel
-        binding.shoeViewModel = shareViewModel
+        binding.shoesDetails = shareViewModel
 
         // Specify the current activity as the lifecycle owner of the binding. This is used so that
         // the binding can observe LiveData updates
@@ -49,15 +50,21 @@ class ShoeDetailFragment : Fragment() {
         options.adapter = adapter
 
         // Add onclickListeners
-        binding.addShoeButton.setOnClickListener { v: View ->
-            Toast.makeText(activity, "The new item has been created", Toast.LENGTH_SHORT).show()
-            v.findNavController()
-                .navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
-        }
-
         binding.cancelButton.setOnClickListener(
             Navigation.createNavigateOnClickListener(R.id.action_shoeDetailFragment_to_shoeListFragment)
         )
+
+        shareViewModel.addNewItem.observe(viewLifecycleOwner, Observer { item ->
+            if (item) {
+                Toast.makeText(activity, "The new item has been created", Toast.LENGTH_SHORT).show()
+                findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+            }
+        })
+
+//        binding.addShoeButton.setOnClickListener { shoe->
+//            Toast.makeText(activity, "The new item has been created", Toast.LENGTH_SHORT).show()
+//            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+//        }
 
         return binding.root
     }
