@@ -10,13 +10,21 @@
         <action
             android:id="@+id/action_loginFragment_to_onboardingWelcomeFragment"
             app:destination="@id/onboardingWelcomeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_up"
+            app:popExitAnim="@anim/slide_out_down"
             app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/action_loginFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_down"
+            app:popExitAnim="@anim/slide_in_up"
             app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
@@ -25,7 +33,11 @@
         android:label="OnboardingWelcomeFragment" >
         <action
             android:id="@+id/action_onboardingWelcomeFragment_to_onboardingFirstFragment"
-            app:destination="@id/onboardingFirstFragment" />
+            app:destination="@id/onboardingFirstFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left" />
     </fragment>
     <fragment
         android:id="@+id/onboardingFirstFragment"
@@ -33,9 +45,17 @@
         android:label="OnboardingFirstFragment" >
         <action
             android:id="@+id/action_onboardingFirstFragment_to_onboardingSecondFragment"
-            app:destination="@id/onboardingSecondFragment" />
+            app:destination="@id/onboardingSecondFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_in_left" />
         <action
             android:id="@+id/action_onboardingFirstFragment_to_onboardingWelcomeFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/onboardingWelcomeFragment" />
     </fragment>
     <fragment
@@ -44,12 +64,20 @@
         android:label="OnboardingSecondFragment" >
         <action
             android:id="@+id/action_onboardingSecondFragment_to_onboardingFirstFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/onboardingFirstFragment" />
         <action
             android:id="@+id/action_onboardingSecondFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right"
             app:popUpTo="@id/onboardingWelcomeFragment"
-            app:popUpToInclusive="true"/>
+            app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
@@ -58,12 +86,11 @@
         android:label="ShoeListFragment" >
         <action
             android:id="@+id/action_shoeListFragment_to_shoeDetailFragment"
-            app:destination="@id/shoeDetailFragment" />
-        <action
-            android:id="@+id/action_shoeListFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/shoeListFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/shoeDetailFragment"
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_down"
+            app:popExitAnim="@anim/slide_out_up" />
     </fragment>
     <fragment
         android:id="@+id/shoeDetailFragment"
@@ -71,7 +98,11 @@
         android:label="ShoeDetailFragment" >
         <action
             android:id="@+id/action_shoeDetailFragment_to_shoeListFragment"
-            app:popUpTo="@id/shoeListFragment"/>
+            app:enterAnim="@anim/fade_in"
+            app:exitAnim="@anim/fade_out"
+            app:popEnterAnim="@anim/slide_in_right"
+            app:popExitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/shoeListFragment" />
 
     </fragment>
 </navigation>

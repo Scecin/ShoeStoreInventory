@@ -6,8 +6,8 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.lifecycle.Observer
-import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
 import com.example.shoestoreinventory.R
 import com.example.shoestoreinventory.databinding.FragmentShoeListBinding
@@ -28,10 +28,7 @@ class ShoeListFragment: Fragment(){
         // Include the menu
         setHasOptionsMenu(true)
 
-        binding.floatingActionButton.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
-
-        // Use the custom class
+        // Set the shoeList in the ShoeListFragment
         shareViewModel.shoeList.observe(viewLifecycleOwner, Observer { shoeList ->
             shoeList.forEach { shoe ->
                 val view: View = inflater.inflate(R.layout.shoe_item, null, false)
@@ -46,6 +43,11 @@ class ShoeListFragment: Fragment(){
 
             }
         })
+
+        binding.floatingActionButton.setOnClickListener{
+            findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
+        }
+//            Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
 
         return binding.root
     }
