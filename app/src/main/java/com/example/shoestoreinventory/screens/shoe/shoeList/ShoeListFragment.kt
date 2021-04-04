@@ -35,7 +35,7 @@ class ShoeListFragment: Fragment(){
                 view.shoe_image.setImageResource(shoe.imageResource)
                 view.shoe_name.text = shoe.name
                 view.shoe_brand.text = shoe.brand
-                view.shoe_gender.text = shoe.gender
+                view.shoe_gender.text = shoe.gender.toString()
                 view.shoe_size.text = shoe.size
                 view.shoe_description.text = shoe.description
 
@@ -47,11 +47,9 @@ class ShoeListFragment: Fragment(){
         binding.floatingActionButton.setOnClickListener{
             findNavController().navigate(ShoeListFragmentDirections.actionShoeListFragmentToShoeDetailFragment())
         }
-//            Navigation.createNavigateOnClickListener(R.id.action_shoeListFragment_to_shoeDetailFragment))
 
         return binding.root
     }
-
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
         super.onCreateOptionsMenu(menu, inflater)

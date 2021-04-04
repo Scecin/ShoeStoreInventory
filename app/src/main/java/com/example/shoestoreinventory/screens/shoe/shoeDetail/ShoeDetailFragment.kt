@@ -56,16 +56,17 @@ class ShoeDetailFragment : Fragment() {
 
         shareViewModel.addNewItem.observe(viewLifecycleOwner, Observer { item ->
             if (item) {
-                Toast.makeText(activity, "The new item has been created", Toast.LENGTH_SHORT).show()
+                newShoeCreated()
+                shareViewModel.addNewShoeComplete()
                 findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+                shareViewModel.updateList()
             }
         })
 
-//        binding.addShoeButton.setOnClickListener { shoe->
-//            Toast.makeText(activity, "The new item has been created", Toast.LENGTH_SHORT).show()
-//            findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
-//        }
-
         return binding.root
+    }
+    private fun newShoeCreated () {
+        Toast.makeText(activity, "The new item has been created", Toast.LENGTH_SHORT).show()
+
     }
 }

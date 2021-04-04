@@ -3,7 +3,7 @@
     <string name="Terms_conditions"><![CDATA[Terms & Conditions]]></string>
     <string name="log_in">Log In</string>
     <string name="welcome">Welcome!</string>
-    <string name="welcome_message">We are delighted to see you again. \nLog in and keep enjoying!</string>
+    <string name="welcome_message">We are delighted to see you. \nLog in or Sign up and enjoy!</string>
     <string name="password">Password</string>
     <string name="email">E-mail</string>
     <string name="password_icon" />
@@ -11,7 +11,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="next">Next</string>
     <string name="shoes_image" />
-    <string name="welcome_text_explanation">With Shoe Store Inventory you can keep a dynamic and precise control of the products in your store.</string>
+    <string name="welcome_text_explanation">With Shoe Store Inventory you can keep a dynamic and precise control of the products in your shop.</string>
     <string name="back">Back</string>
     <string name="skip">Skip</string>
     <string name="image_icon" />
@@ -27,6 +27,10 @@
     <string name="add">Add</string>
     <string name="cancel_text">Cancel</string>
     <string name="logout">Logout</string>
+    <string name="list_shoes">All your shoes in one list.</string>
+    <string name="create_a_list">Create a list with all your shoes, selecting some of their characteristics such as name, brand, size, and much more.</string>
+    <string name="add_new_shoes">Add as many shoes as you want.</string>
+    <string name="add_new_shoe_text">Add new shoes and their characteristics, as well as a photo and description of all of them, and have control of all your models, brands, etc.</string>
 
     <string-array name="options">
         <item>Women</item>

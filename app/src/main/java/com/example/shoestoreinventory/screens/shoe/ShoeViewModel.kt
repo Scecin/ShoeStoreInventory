@@ -22,7 +22,13 @@ class ShoeViewModel : ViewModel() {
     val addNewItem: LiveData<Boolean>
         get() = _addNewItem
 
+    // Toast
+    private val _eventNewShoeCreated = MutableLiveData<Boolean>()
+    val eventNewShoeCreated: LiveData<Boolean>
+        get() = _eventNewShoeCreated
+
     init {
+        _eventNewShoeCreated.value = false
         _shoe.value = Shoe(0,"","","","","")
         _shoeList.value = shoeList()
         _addNewItem.value = false
@@ -51,6 +57,15 @@ class ShoeViewModel : ViewModel() {
         _shoeList.value?.add(_shoe.value!!)
         _addNewItem.value = true
         _shoe.value = Shoe(0,"","","","","")
+        _eventNewShoeCreated.value = true
+    }
+
+    fun updateList() {
+        _addNewItem.value = false
+    }
+
+    fun addNewShoeComplete() {
+        _eventNewShoeCreated.value = false
     }
 
     override fun onCleared() {
