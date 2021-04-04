@@ -26,7 +26,7 @@ class LoginFragment : Fragment() {
 
         // Create onclickListeners
         binding.loginButton.setOnClickListener (
-            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_shoeListFragment)
+            Navigation.createNavigateOnClickListener(R.id.action_loginFragment_to_onboardingWelcomeFragment)
         )
 
         binding.singUpButton.setOnClickListener(

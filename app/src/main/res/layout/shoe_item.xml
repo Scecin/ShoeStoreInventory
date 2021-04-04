@@ -10,6 +10,9 @@
             type="com.example.shoestoreinventory.screens.shoe.ShoeViewModel" />
     </data>
 
+    <!-- I've used a constraintLayout, because this layout is more complex with image and textViews,
+     and constraintLayout allows me to choose the exact distance between the elements as well as their placement. -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"

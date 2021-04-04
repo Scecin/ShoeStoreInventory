@@ -5,6 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.android.navigation.LoginFragment">
 
+    <!-- I've used a constraintLayout, because this layout is more complex with image,
+    textViews and buttons, and constraintLayout allows me to choose the exact distance
+    between the elements as well as their placement. -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/login_layout"
         android:layout_width="match_parent"

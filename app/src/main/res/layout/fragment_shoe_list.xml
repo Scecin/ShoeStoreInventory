@@ -3,6 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- II have used a relativeLayout, because this design is not a linear design,
+    but it is not so complex as to use a constraintLayout, thus saving memory.  -->
+
     <RelativeLayout
         android:id="@+id/relative_layout_list"
         android:layout_width="match_parent"
@@ -12,6 +15,9 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
+
+           <!-- I have used a linearLayout, because this is where I show my ShoeList,
+            and this is just a vertical linear list with one item after the other.. -->
 
         <LinearLayout
             android:id="@+id/shoes_linear_layout"

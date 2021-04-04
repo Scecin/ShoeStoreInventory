@@ -16,15 +16,6 @@
             app:popExitAnim="@anim/slide_out_down"
             app:popUpTo="@id/loginFragment"
             app:popUpToInclusive="true" />
-        <action
-            android:id="@+id/action_loginFragment_to_shoeListFragment"
-            app:destination="@id/shoeListFragment"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/slide_in_down"
-            app:popExitAnim="@anim/slide_in_up"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
 
     </fragment>
     <fragment
