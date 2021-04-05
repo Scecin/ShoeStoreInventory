@@ -35,41 +35,21 @@
         android:name="com.example.shoestoreinventory.screens.onboarding.OnboardingInstructionsFragment"
         android:label="OnboardingFirstFragment" >
         <action
-            android:id="@+id/action_onboardingFirstFragment_to_onboardingSecondFragment"
-            app:destination="@id/onboardingSecondFragment"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_in_left" />
-        <action
             android:id="@+id/action_onboardingFirstFragment_to_onboardingWelcomeFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/slide_in_right"
             app:popExitAnim="@anim/slide_out_left"
             app:popUpTo="@id/onboardingWelcomeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/onboardingSecondFragment"
-        android:name="com.example.shoestoreinventory.screens.onboarding.OnboardingInstructionFragment2"
-        android:label="OnboardingSecondFragment" >
         <action
-            android:id="@+id/action_onboardingSecondFragment_to_onboardingFirstFragment"
-            app:enterAnim="@anim/fade_in"
-            app:exitAnim="@anim/fade_out"
-            app:popEnterAnim="@anim/slide_in_right"
-            app:popExitAnim="@anim/slide_out_left"
-            app:popUpTo="@id/onboardingFirstFragment" />
-        <action
-            android:id="@+id/action_onboardingSecondFragment_to_shoeListFragment"
+            android:id="@+id/action_onboardingFirstFragment_to_shoeListFragment"
             app:destination="@id/shoeListFragment"
             app:enterAnim="@anim/fade_in"
             app:exitAnim="@anim/fade_out"
             app:popEnterAnim="@anim/slide_in_left"
-            app:popExitAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_right"
             app:popUpTo="@id/onboardingWelcomeFragment"
-            app:popUpToInclusive="true" />
-
+            app:popUpToInclusive="true"/>
     </fragment>
     <fragment
         android:id="@+id/shoeListFragment"

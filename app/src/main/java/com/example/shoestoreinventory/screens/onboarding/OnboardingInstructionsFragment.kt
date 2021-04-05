@@ -24,8 +24,8 @@ class OnboardingInstructionsFragment : Fragment(){
             Navigation.createNavigateOnClickListener(R.id.action_onboardingFirstFragment_to_onboardingWelcomeFragment)
         )
 
-        binding.nextButton.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.action_onboardingFirstFragment_to_onboardingSecondFragment)
+        binding.skipButton.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.action_onboardingFirstFragment_to_shoeListFragment)
         )
 
         return binding.root
